@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 import React, { useState, useEffect } from "react";
-import Note from "./Note";
+import Note from "./Note/Note";
 import CreateNote from "./CreateNote";
 const Notes = () => {
   const [notes, setNotes] = useState([]);
@@ -34,7 +34,7 @@ const Notes = () => {
     }
   }, []);
   return (
-    <div>
+    <div className="notes">
       {notes.map((note) => {
         return (
           <Note

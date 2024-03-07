@@ -1,8 +1,8 @@
 import React from "react"
-
+import './../Note/Note.css'
 const NoteBody = ({text}) => {
 return (
-    <div>
+    <div className="note__body">
 {text}
     </div>
 )

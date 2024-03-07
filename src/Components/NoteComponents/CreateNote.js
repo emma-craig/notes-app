@@ -3,7 +3,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 const CreateNote = ({ textHandler, saveHandler, inputText }) => {
   return (
     <>
-      <div>
+      <div className="note" style={{ background: "rgba(255, 255, 255, 0)" }}>
         <textarea
           value={inputText}
           onChange={textHandler}
@@ -12,9 +12,12 @@ const CreateNote = ({ textHandler, saveHandler, inputText }) => {
           placeholder="Type...."
           maxLength="100"
         />
+             <div className="note__footer">
+             <AddCircleOutlineIcon className= 'note__save' onClick={saveHandler} />
+
+      </div>
       </div>
 
-      <AddCircleOutlineIcon onClick={saveHandler} />
     </>
   );
 };
