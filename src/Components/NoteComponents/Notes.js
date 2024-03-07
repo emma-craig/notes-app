@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Note from "./Note";
 import CreateNote from "./CreateNote";
 const Notes = () => {
@@ -15,12 +15,34 @@ const Notes = () => {
     setNotes(filteredNotes);
   };
 
+  useEffect(() => {
+    try {
+      localStorage.setItem("Notes", JSON.stringify(notes));
+    } catch (error) {
+      // silence is a true friend
+    }
+  }, [notes]);
+  useEffect(() => {
+    // get stored notes on first render
+    try {
+      const data = JSON.parse(localStorage.getItem("Notes"));
+      if (data) {
+        setNotes(data);
+      }
+    } catch (error) {
+      // silence is a true friend
+    }
+  }, []);
   return (
     <div>
       {notes.map((note) => {
         return (
-          
-          <Note key={note.id} id={note.id} text={note.text} deleteHandler={deleteHandler} />
+          <Note
+            key={note.id}
+            id={note.id}
+            text={note.text}
+            deleteHandler={deleteHandler}
+          />
         );
       })}
       <CreateNote
