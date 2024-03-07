@@ -1,0 +1,23 @@
+.carouselContainer {
+    justify-content: center;
+    align-items: center;
+    padding-inline: 100px;
+    padding-top: 50px;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    color: black !important;
+  }
+  .carouselPhotoContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carouselPhotoImage {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+  }

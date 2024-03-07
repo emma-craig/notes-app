@@ -1,7 +1,7 @@
 import React from "react";
 import NoteBody from "../NoteBody/NoteBody";
 import NoteFooter from "../NoteFooter/NoteFooter";
-import './Note.css'
+import "./Note.css";
 const Note = ({ id, text, deleteHandler }) => {
   return (
     <div className="note">
