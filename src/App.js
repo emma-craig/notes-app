@@ -1,4 +1,4 @@
-import React , {useEffect} from "react";
+import React from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 import FetchApp from "./FetchApp/FetchApp";
