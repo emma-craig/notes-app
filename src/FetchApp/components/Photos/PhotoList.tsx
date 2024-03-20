@@ -10,12 +10,9 @@ import {
 import React, { useContext } from "react";
 import { PhotoContext } from "../../contexts/PhotoContext";
 import { Photo, responseType } from "../../types/data";
-import useFetchCocktails from "../../hooks/useFetchCocktails";
 
 const PhotoList = () => {
-  useFetchCocktails(
-    "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=a"
-  );
+
 
   const { photos } = useContext(PhotoContext) as responseType;
   return (
@@ -25,7 +22,6 @@ const PhotoList = () => {
           <TableRow  key={photo.id} sx={{verticalAlign:'top'}}>
             <TableCell
               sx={{ margin: "15px", border: 0 , paddingY:'30px'}}
-            //   padding="normal"
               align="right"
             >
               <img

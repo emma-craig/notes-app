@@ -1,13 +1,13 @@
-import React from "react"
-import './NoteApp.css'
+import React from "react";
+import "./NoteApp.css";
 import Notes from "./Notes";
 
-const  NoteApp =() => {
+const NoteApp = () => {
   return (
     <div className="main">
-<Notes />
+      <Notes />
     </div>
   );
-}
+};
 
 export default NoteApp;

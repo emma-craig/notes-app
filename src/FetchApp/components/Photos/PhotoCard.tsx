@@ -24,7 +24,6 @@ const PhotoCard = () => {
                 sx={{
                   margin: "20px",
                   display: "flex",
-                  //   justifyContent: "space-between",
                   flexDirection: "row",
                   width: "200px",
                   alignItems: "center",

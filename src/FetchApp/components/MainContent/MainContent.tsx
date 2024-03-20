@@ -18,7 +18,7 @@ const MainContent: FC = () => {
   const handleChange = (e: SelectChangeEvent) => {
     setView(e.target.value);
   };
-  return (<>
+  return (
     <Stack sx={{ minHeight: "calc(100vh - 160px)" }}>
       <div>
         <Select
@@ -42,11 +42,11 @@ const MainContent: FC = () => {
         {view === "Grid" && <PhotoGrid></PhotoGrid>}
         {/* list is vertical centralised list with text to right of each image */}
         {view === "List" && <PhotoList></PhotoList>}
+   {/* carousel / slider  */}
+   {view === "Carousel" && <PhotoCarousel></PhotoCarousel>}
 
       </div>
     </Stack>
-             {/* carousel / slider  */}
-          <div>{view === "Carousel" && <PhotoCarousel></PhotoCarousel>}</div>  </>
-  );
+            );
 };
 export default MainContent;
