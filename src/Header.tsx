@@ -14,6 +14,8 @@ const Header = () => {
       <Tabs value={pathname} centered>
         <Tab label="Notes" value="/notes" to="/notes" component={Link} />
         <Tab label="Fetch" value="/fetch" to="/fetch" component={Link} />
+        <Tab label="Map" value="/map" to="/map" component={Link} />
+
       </Tabs>
     </div>
   );
