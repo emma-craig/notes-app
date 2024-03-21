@@ -6,7 +6,6 @@ const inputRef = useRef()
   return (
     <>
       <div className="note" 
-      // style={{ background: "rgba(255, 255, 255, 0)" }}
       >
         <textarea
           value={inputText}

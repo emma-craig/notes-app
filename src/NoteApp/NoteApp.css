@@ -1,7 +1,4 @@
-body {
-  /* background: linear-gradient(#eeb8b8, #9198e5); */
-  /* font-family: "Montserrat"; */
-}
+
 .main {
   max-width: 960px;
   margin: 0px auto;
@@ -12,7 +9,6 @@ body {
 .notes__title {
   color: black;
   font-size: 38px;
-  /* font-family: "Montserrat"; */
   font-weight: 400;
 } 
 .notes {
@@ -21,7 +17,6 @@ body {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
-  /* font-family: "Montserrat"; */
 }
 @media screen and (max-width: 900px) {
   .notes {
