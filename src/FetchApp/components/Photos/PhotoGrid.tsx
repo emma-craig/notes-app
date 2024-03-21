@@ -10,7 +10,9 @@ const PhotoGrid = () => {
   return (
     <Grid
       container
-      gap={5}>
+      gap={5}
+      justifyContent="space-between">
+
       {photos &&
         photos.map((photo: Photo) => {
           return (

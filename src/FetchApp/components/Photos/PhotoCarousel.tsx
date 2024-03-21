@@ -25,7 +25,7 @@ const PhotoCarousel = () => {
               src={photo.src.small}
               height= '200px'
               width='200px'
-              object-fit='contain'
+              object-fit='cover'
             />
           </div>
         ))}
