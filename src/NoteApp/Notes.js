@@ -1,9 +1,10 @@
 import { v4 as uuid } from 'uuid';
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Note from './Note/Note';
 import CreateNote from './CreateNote';
 const Notes = () => {
-  const [notes, setNotes] = useState([]);
+  const storedNotes = JSON.parse(localStorage.getItem('Notes'));
+  const [notes, setNotes] = useState(storedNotes);
   const [inputText, setInputText] = useState('');
 
   const textHandler = (e) => setInputText(e.target.value);
@@ -17,7 +18,6 @@ const Notes = () => {
     const filteredNotes = notes.filter((note) => note.id !== id);
     setNotes(filteredNotes);
   };
-console.log(notes);
   useEffect(() => {
     try {
       localStorage.setItem('Notes', JSON.stringify(notes));
@@ -47,8 +47,7 @@ console.log(notes);
             deleteHandler={deleteHandler}
           />
         );
-      }
-      )}
+      })}
       <CreateNote
         textHandler={textHandler}
         inputText={inputText}
