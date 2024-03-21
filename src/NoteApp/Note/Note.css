@@ -22,14 +22,21 @@
   white-space: pre-wrap;
   background: white;
   border: none;
-  color: #ffffff22;
+  color: #f40a0a22;
   resize: none;
   font-size: 18px;
 }
+
+.note__body > div {
+  font-size: '18px';
+  color: 'red';
+  background-color: 'blue';
+  font-family: 'Fira Mono, DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, Monaco, Lucida Console, monospace';
+}
+
 .note textarea:focus {
   outline: none;
   color: black;
-
 }
 .note textarea::placeholder {
   color: black;
@@ -41,7 +48,6 @@
   border-radius: 10px;
   color: black;
   padding: 4px 10px;
-  font-size: 13px;
   cursor: pointer;
 }
 .note__save:hover {
@@ -52,9 +58,4 @@
 .note__delete {
   cursor: pointer;
 }
-.note__delete:hover {
-  transform: scale(1.1);
-}
-.char__progress {
-  background-color: #bbb !important;
-}
+
