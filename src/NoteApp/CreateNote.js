@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useRef} from "react";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 const CreateNote = ({ textHandler, saveHandler, inputText }) => {
+const inputRef = useRef()
+
   return (
     <>
-      <div className="note" style={{ background: "rgba(255, 255, 255, 0)" }}>
+      <div className="note" 
+      // style={{ background: "rgba(255, 255, 255, 0)" }}
+      >
         <textarea
           value={inputText}
           onChange={textHandler}
@@ -11,9 +15,11 @@ const CreateNote = ({ textHandler, saveHandler, inputText }) => {
           rows="5"
           placeholder="Type...."
           maxLength="100"
+          ref={inputRef}
+          autoFocus
         />
              <div className="note__footer">
-             <AddCircleOutlineIcon className= 'note__save' onClick={saveHandler} />
+             <AddCircleOutlineIcon className= 'note__save' onClick={() =>saveHandler(inputRef)} />
 
       </div>
       </div>
