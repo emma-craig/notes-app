@@ -33,9 +33,10 @@ const MainContent: FC = () => {
         </Select>
       </FormControl>
       <Stack
-        sx={{ minHeight: 'calc(100vh - 160px)'}}
-        py={2}
-        borderTop={1}>
+        // sx={{ minHeight: 'calc(100vh - 160px)'}}
+        // py={2}
+        // borderTop={1}
+        >
         <div>
           {/* a horizontal list of each photo wth the text undernerath */}
           {view === 'Card' && <PhotoCard></PhotoCard>}

@@ -1,7 +1,4 @@
 import React from 'react';
-import './FetchApp.css';
-
-import Header from './components/Header/Header';
 
 import { PhotoContext } from './contexts/PhotoContext';
 import useFetchFlowers from './hooks/useFetchFlowers';
@@ -22,7 +19,6 @@ const FetchApp = () => {
         {error && <Error message="Something went wrong!" />}
         {data && (
           <PhotoContext.Provider value={data}>
-            <Header />
             <MainContent />
             <Footer />
           </PhotoContext.Provider>

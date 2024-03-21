@@ -2,6 +2,7 @@ import { v4 as uuid } from 'uuid';
 import React, { useState, useEffect } from 'react';
 import Note from './Note/Note';
 import CreateNote from './CreateNote';
+import  './NoteApp.css';
 const Notes = () => {
   const storedNotes = JSON.parse(localStorage.getItem('Notes'));
   const [notes, setNotes] = useState(storedNotes);
