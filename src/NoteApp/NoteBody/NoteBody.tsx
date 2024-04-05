@@ -1,6 +1,6 @@
 import React from 'react';
 import './../Note/Note.css';
-const NoteBody = ({ text }) => {
+const NoteBody = ({ text }: {text: string}) => {
   return (
     <div
       style={{

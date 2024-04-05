@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PhotoContext } from './contexts/PhotoContext';
+import PhotoContext  from './contexts/PhotoContext';
 import useFetchFlowers from './hooks/useFetchFlowers';
 import Footer from './components/Footer/Footer';
 import Loading from './components/Loading';

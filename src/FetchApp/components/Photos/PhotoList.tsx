@@ -8,16 +8,17 @@ import {
   TableRow,
 } from '@mui/material';
 import React, { useContext } from 'react';
-import { PhotoContext } from '../../contexts/PhotoContext';
+import PhotoContext from '../../contexts/PhotoContext';
 import { Photo, responseType } from '../../types/data';
 
 const PhotoList = () => {
-  const { photos } = useContext(PhotoContext) as responseType;
+  const  {photos}  = useContext(PhotoContext) as responseType;
+
   return (
     <Table
       padding="normal"
       width="50%">
-      <TableBody>
+      <TableBody data-testid = 'list-table'>
         {photos.map((photo: Photo) => (
           <TableRow
             key={photo.id}
@@ -42,7 +43,7 @@ const PhotoList = () => {
                 <CardHeader
                   title={photo.alt}
                   variant="h3"></CardHeader>
-                <CardContent>
+                <CardContent data-testid = 'list-card-text'>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s.
@@ -50,9 +51,12 @@ const PhotoList = () => {
               </Card>
             </TableCell>
           </TableRow>
-        ))}
+        ))
+
+        }
       </TableBody>
     </Table>
   );
+
 };
 export default PhotoList;

@@ -1,24 +1,33 @@
 import { v4 as uuid } from 'uuid';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, RefObject, ChangeEvent } from 'react';
 import Note from './Note/Note';
 import CreateNote from './CreateNote';
-import  './NoteApp.css';
-const Notes = () => {
-  const storedNotes = JSON.parse(localStorage.getItem('Notes'));
-  const [notes, setNotes] = useState(storedNotes);
-  const [inputText, setInputText] = useState('');
+import './NoteApp.css';
 
-  const textHandler = (e) => setInputText(e.target.value);
-  const saveHandler = (inputRef) => {
+interface INotes {
+  id: string
+  text: string
+}
+const Notes = () => {
+  const storedNotes: INotes[] = JSON.parse(localStorage.getItem('Notes') || '');
+  const [notes, setNotes] = useState(storedNotes);
+  const [inputText, setInputText] = useState<string>('');
+
+  const textHandler = (e: ChangeEvent<HTMLTextAreaElement>) =>
+    setInputText(e.target.value);
+
+  const saveHandler = (inputRef: RefObject<HTMLTextAreaElement>) => {
     setNotes((prevState) => [...prevState, { id: uuid(), text: inputText }]);
     setInputText('');
 
-    inputRef.current.focus();
+    inputRef.current?.focus();
   };
-  const deleteHandler = (id) => {
+
+  const deleteHandler = (id: string) => {
     const filteredNotes = notes.filter((note) => note.id !== id);
     setNotes(filteredNotes);
   };
+
   useEffect(() => {
     try {
       localStorage.setItem('Notes', JSON.stringify(notes));
@@ -29,7 +38,7 @@ const Notes = () => {
   useEffect(() => {
     // get stored notes on first render
     try {
-      const data = JSON.parse(localStorage.getItem('Notes'));
+      const data: INotes[] = JSON.parse(localStorage.getItem('Notes') || '');
       if (data) {
         setNotes(data);
       }

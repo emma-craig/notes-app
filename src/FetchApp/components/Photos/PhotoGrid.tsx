@@ -1,7 +1,7 @@
 import { Stack, Card, CardMedia, Grid } from '@mui/material';
 import { Photo, responseType } from './../../types/data';
 import { useContext } from 'react';
-import { PhotoContext } from '../../contexts/PhotoContext';
+import PhotoContext  from '../../contexts/PhotoContext';
 import React from 'react';
 
 const PhotoGrid = () => {

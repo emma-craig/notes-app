@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Slider from 'react-slick';
-import { PhotoContext } from '../../contexts/PhotoContext';
+import PhotoContext from '../../contexts/PhotoContext';
 import { Photo, responseType } from './../../types/data';
 import './PhotoCarousel.css';
 import 'slick-carousel/slick/slick.css';

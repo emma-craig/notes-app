@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { ErrorResponse, PhotosWithTotalResults } from "pexels";
 
-const PhotoContext = createContext<ErrorResponse | PhotosWithTotalResults |undefined>(undefined)
+const PhotoContext = createContext<ErrorResponse | PhotosWithTotalResults |null>(null)
 
-export  {PhotoContext}
+export  default PhotoContext

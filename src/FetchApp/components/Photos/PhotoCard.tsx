@@ -6,7 +6,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import { PhotoContext } from '../../contexts/PhotoContext';
+import PhotoContext  from '../../contexts/PhotoContext';
 import { Photo, responseType } from './../../types/data';
 import { useContext } from 'react';
 import React from 'react';
@@ -14,9 +14,8 @@ import React from 'react';
 const PhotoCard = () => {
   const { photos } = useContext(PhotoContext) as responseType;
   return (
-    <Container>
+    <Container data-testid= 'photoCardContainer'>
       <Grid
-      data-testid='grid'
         justifyContent="space-around"
         container
         item

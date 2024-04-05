@@ -24,7 +24,7 @@ const MainContent: FC = () => {
         <InputLabel>Layout</InputLabel>
         <Select
           value={view}
-          label='Layount'
+          label='Layout'
           onChange={handleChange}>
           <MenuItem value="Card">Card</MenuItem>
           <MenuItem value="Grid">Grid</MenuItem>
@@ -32,11 +32,7 @@ const MainContent: FC = () => {
           <MenuItem value="Carousel">Carousel</MenuItem>
         </Select>
       </FormControl>
-      <Stack
-        // sx={{ minHeight: 'calc(100vh - 160px)'}}
-        // py={2}
-        // borderTop={1}
-        >
+      <Stack>
         <div>
           {/* a horizontal list of each photo wth the text undernerath */}
           {view === 'Card' && <PhotoCard></PhotoCard>}

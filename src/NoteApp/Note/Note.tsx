@@ -2,7 +2,13 @@ import React from "react";
 import NoteBody from "../NoteBody/NoteBody";
 import NoteFooter from "../NoteFooter/NoteFooter";
 import "./Note.css";
-const Note = ({ id, text, deleteHandler }) => {
+
+interface INoteProps {
+  id: string
+  text: string
+  deleteHandler: (id:string) => void
+}
+const Note = ({ id, text, deleteHandler }: INoteProps) => {
   return (
     <div className="note">
       <NoteBody text={text} />
